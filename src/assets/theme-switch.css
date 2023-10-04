@@ -29,40 +29,31 @@
   border-radius: 25px;
 }
 .color-scheme-toggle .switch span {
+  color: #fff;
+  font-size: 32px;
   position: absolute;
   width: 20px;
   height: 4px;
   top: 50%;
   left: 50%;
-  margin: -2px 0px 0px -4px;
-  background: #59595b;
+  margin: -16px 0px 0px -16px;
   display: block;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   -ms-transition: all 1s ease;
   transition: all 1s ease;
-  border-radius: 2px;
 }
 .color-scheme-toggle .switch span:after {
-  content: "";
   display: block;
-  position: absolute;
-  width: 4px;
-  height: 12px;
-  margin-top: -8px;
-  background: #59595b;
+  margin-top: -6px;
+  margin-left: -4px;
+  font-size: 28px;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   -ms-transition: all 1s ease;
   transition: all 1s ease;
-  border-radius: 2px;
 }
 .color-scheme-toggle input[type=radio] {
   display: none;
@@ -80,9 +71,8 @@
 }
 .color-scheme-toggle label[for=dark] {
   position: absolute;
-  color: #fff;
+  color: #a9a9a9;
   left: 0px;
-  height: 20px;
 }
 .color-scheme-toggle label[for=system] {
   position: absolute;
@@ -95,27 +85,32 @@
   right: 0px;
 }
 #dark:checked ~ .switch {
-  background: #aaa9a9;
   color: #212122;
 }
 #light:checked ~ .switch {
-  background: #262726;
-  color: #bababe;
+  color: #5d5d5e;
 }
 #system:checked ~ .switch {
-  background: #59595b;
   color: #59595b;
 }
 #dark:checked ~ .switch span {
-  background: #fff;
   margin-left: -8px;
 }
 #light:checked ~ .switch span:after {
-  background: #fff;
   height: 20px;
-  margin-top: -8px;
-  margin-left: 8px;
+  content: "☼";
+  margin-top: -10px;
+  margin-left: 5px;
+  font-size: 32px;
 }
+#dark:checked ~ .switch span:after {
+  content: "☾";
+}
+
+#system:checked ~ .switch span:after {
+  content: "☯";
+}
+
 #system:checked ~ .switch span {
   background: #59595b;
   margin-left: -8px;
@@ -137,6 +132,9 @@
   margin-left: 8px;
 }
 #dark:checked ~ .switch label[for=dark] {
+  color: #fff;
+}
+#light:checked ~ .switch label[for=light] {
   color: #fff;
 }
 #light:checked ~ .switch label[for=light] {

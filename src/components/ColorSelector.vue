@@ -53,6 +53,7 @@
   .color-selector {
     display: flex;
     flex-wrap: wrap;
+    list-style: none;
   }
 
   .color-item {

@@ -57,7 +57,13 @@ export default {
 }
 
 .material.active {
-  background-color: lightgray;
+  background-color: var(--logo-fill);
+  color: var(--logo-header-shadow);
+}
+
+.material.active span:after {
+    background-color: var(--logo-header-shadow);
+    opacity: 1;
 }
 
 .material span {
@@ -76,10 +82,5 @@ export default {
     will-change: opacity, background-color;
     -webkit-transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
     transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
-}
-
-.material.active span:after {
-    background-color: #1b1b1b;
-    opacity: 1;
 }
 </style>

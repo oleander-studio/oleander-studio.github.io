@@ -160,21 +160,102 @@ export default {
 
 <template>
   <main>
-    <div class="wrapper panel">
+    <div class="wrapper panel flex-center">
       <h2><a href="#intro" title="OLEANDER studio - What we do?">What we do?</a></h2>
-      <p>
+      <p class="text-main">
         We are a small team of developers and designers who are passionate about
         creating stunning 3d models and helping them to sneak into websites and
-        apps.
+        apps
       </p>
+      <ul class="team-gallery">
+        <li class="oleg">
+          <img src="/oleg.jpg" alt="O" />
+          <h3>Oleg</h3>
+          <p>Web developer with more than 10 years of experience, JS magician who recently fell in love with 3D</p>
+          <ul class="links">
+            <li><a href="https://github.com/osharper" target="_blank" rel="noopener noreferrer">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/oleg-dolotov-96a053aa" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          </ul>
+        </li>
+        <li class="andrey">
+          <img src="/andrey.jpg" alt="A" />
+          <h3>Andrey</h3>
+          <p>3D designer and modeller with passion and professional attitude to every piece he is making</p>
+          <ul class="links">
+            <li><a href="https://sketchfab.com/Netovanniy" target="_blank" rel="noopener noreferrer">Sketchfab</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-    <div class="wrapper panel">
+    <div class="wrapper panel full-height">
       <h2><a href="#cases" title="OLEANDER studio - Cases">Cases</a></h2>
       <h3><a href="#cases-sketchfab-shoe" title="OLEANDER studio - Sketchfab">Sketchfab Configurator</a></h3>
       <SketchfabConfigurator :modelid="modelId" :config="config" />
     </div>
     <div class="wrapper panel">
-        <h2><a href="#prices" title="OLEANDER studio - Prices">Prices</a></h2>
+      <h2><a href="#prices" title="OLEANDER studio - Prices">Prices</a></h2>
+      <p class="text-main">
+        Price is calculated based on the complexity and quantity of the models as well as the amount of work needed to integrate these models into your website or app
+      </p>
+      <h2></h2>
+      <p class="text-main">
+        INTERACTIVE PRICE CALCULATOR IS COMING SOON ☺ Until then feel free to contact us via form below
+      </p>
     </div>
   </main>
 </template>
+
+<style scoped>
+  .team-gallery {
+    padding: 3em;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .team-gallery > li {
+    margin: 2em 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-gallery > li img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+  }
+  .team-gallery > li h3 {
+    font-size: 200%;
+    color: var(--color-heading);
+  }
+
+  .team-gallery > li p {
+    padding: 0 2em;
+    font-size: 125%;
+    color: var(--color-text);
+    margin-bottom: 1em;
+  }
+
+  .team-gallery > li .links {
+    padding: 0 2em;
+    font-size: 125%;
+    margin-bottom: 1em;
+    list-style: none;
+  }
+
+  @media (min-width: 1024px) {
+    .team-gallery {
+      flex-direction: row;
+      padding: 3em 10%;
+    }
+    .team-gallery > li {
+      margin: 2em;
+    }
+  }
+</style>
+

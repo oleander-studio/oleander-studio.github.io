@@ -1,7 +1,7 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-soft: #ddd;
   --vt-c-white-mute: #f2f2f2;
 
   --vt-c-black: #181818;
@@ -37,15 +37,15 @@
   --color-text: var(--vt-c-text-light-1);
 
   --logo-url: url(../oleander-logo-light.png);
-  --logo-header-shadow: --vt-c-black-mute;
-  --logo-fill: --vt-c-black;
+  --logo-header-shadow: var(--vt-c-white-soft);
+  --logo-fill: var(--vt-c-indigo);
 
   --section-gap: 160px;
 }
 
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
-   :root:not([data-color-theme="light"]) {
+  :root:not([data-color-theme="light"]) {
     --color-background: var(--vt-c-black);
     --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute);
@@ -57,8 +57,8 @@
     --color-text: var(--vt-c-text-dark-2);
 
     --logo-url: url(../oleander-logo-dark.png);
-    --logo-header-shadow: --vt-c-text-dark-3;
-    --logo-fill: --vt-c-white-soft;
+    --logo-header-shadow: var(--vt-c-text-dark-3);
+    --logo-fill: var(--vt-c-white-soft);
   }
 }
 :root[data-color-theme="dark"] {
@@ -74,8 +74,8 @@
   --color-text: var(--vt-c-text-dark-2);
 
   --logo-url: url(../oleander-logo-dark.png);
-  --logo-header-shadow: --vt-c-text-dark-3;
-  --logo-fill: --vt-c-white-soft;
+  --logo-header-shadow: var(--vt-c-text-dark-3);
+  --logo-fill: var(--vt-c-white-soft);
 }
 
 

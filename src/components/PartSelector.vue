@@ -44,10 +44,15 @@ export default {
   padding: 15px 20px;
   letter-spacing: 0.6px;
   text-align: center;
+  max-height: 4em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  min-width: 8em;
 }
 
 .part span {
   position: relative;
+  white-space: nowrap;
 }
 
 .part span:after {
@@ -65,11 +70,12 @@ export default {
 }
 
 .part.active {
-  background-color: lightgray;
+  background-color: var(--logo-fill);
+  color: var(--logo-header-shadow);
 }
 
 .part.active span:after {
-    background-color: #1b1b1b;
+    background-color: var(--logo-header-shadow);
     opacity: 1;
 }
 </style>
