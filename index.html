@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico">
+    <script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
+    <script>
+      function removeColorThemeLocalStorage() {
+        localStorage.removeItem('color-theme')
+      }
+
+      function saveColorTheme(colorTheme) {
+        if (colorTheme === 'system') {
+          removeColorThemeLocalStorage()
+          return
+        }
+        localStorage.setItem('color-theme', colorTheme)
+      }
+
+      function applyColorTheme() {
+        const localStorageColorTheme = localStorage.getItem('color-theme')
+        const colorTheme = localStorageColorTheme || null
+        if (colorTheme) {
+          document.documentElement.setAttribute('data-color-theme', colorTheme)
+        }
+      }
+
+      function themeSwitchHandler(themeSwitches) {
+        themeSwitches.forEach(themeSwitch => {
+          const el = themeSwitch
+          if (el.value === localStorage.getItem('color-theme')) {
+            el.checked = true
+          }
+
+          el.addEventListener('change', () => {
+            if (el.value !== 'system') {
+              saveColorTheme(el.value)
+              applyColorTheme()
+            } else {
+              removeColorThemeLocalStorage()
+              document.documentElement.removeAttribute('data-color-theme')
+            }
+          })
+        })
+        applyColorTheme()
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        const themeSwitches = document.querySelectorAll('[data-color-theme-toggle]')
+
+        themeSwitchHandler(themeSwitches)
+        saveColorTheme('dark') // dark by default
+        applyColorTheme()
+      })
+    </script>
+    <title>OLEANDER studio - 3D for apps and websites</title>
+  </head>
+  <body>
+    <header class="header">
+      <figure title="header--logo"></figure>
+      <h1 class="header--title">
+        <span>OLEANDER studio</span>
+      </h1>
+      <div class="color-scheme-toggle" role="group" title="select a color scheme">
+        <input type="radio" name="scheme" id="dark" value="dark" aria-label="dark color scheme" data-color-theme-toggle>
+        <input type="radio" name="scheme" id="system" value="system" aria-label="system color scheme" checked="system" data-color-theme-toggle>
+        <input type="radio" name="scheme" id="light" value="light" aria-label="light color scheme" data-color-theme-toggle>
+        <div class="switch">
+          <label for="dark">Dark</label>
+          <label for="system"></label>
+          <label for="light">Light</label>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

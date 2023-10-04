@@ -1,0 +1,147 @@
+
+.color-scheme-toggle {
+  position: relative;
+  flex: 0 0 2em;
+}
+
+@media (min-width: 1024px) {
+  .color-scheme-toggle {
+    flex: 0 0 10em;
+    margin-left: auto;
+    margin-right: 2em;
+  }
+}
+
+.color-scheme-toggle .switch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  margin: -30px 0 0 -75px;
+  background: #59595b;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 25px;
+}
+.color-scheme-toggle .switch span {
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  top: 50%;
+  left: 50%;
+  margin: -2px 0px 0px -4px;
+  background: #59595b;
+  display: block;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  border-radius: 2px;
+}
+.color-scheme-toggle .switch span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 12px;
+  margin-top: -8px;
+  background: #59595b;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  border-radius: 2px;
+}
+.color-scheme-toggle input[type=radio] {
+  display: none;
+}
+.color-scheme-toggle .switch label {
+  cursor: pointer;
+  color: #000;
+  width: 60px;
+  line-height: 50px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.color-scheme-toggle label[for=dark] {
+  position: absolute;
+  color: #fff;
+  left: 0px;
+  height: 20px;
+}
+.color-scheme-toggle label[for=system] {
+  position: absolute;
+  color: #000;
+  right: 40px;
+}
+.color-scheme-toggle label[for=light] {
+  position: absolute;
+  color: #000;
+  right: 0px;
+}
+#dark:checked ~ .switch {
+  background: #aaa9a9;
+  color: #212122;
+}
+#light:checked ~ .switch {
+  background: #262726;
+  color: #bababe;
+}
+#system:checked ~ .switch {
+  background: #59595b;
+  color: #59595b;
+}
+#dark:checked ~ .switch span {
+  background: #fff;
+  margin-left: -8px;
+}
+#light:checked ~ .switch span:after {
+  background: #fff;
+  height: 20px;
+  margin-top: -8px;
+  margin-left: 8px;
+}
+#system:checked ~ .switch span {
+  background: #59595b;
+  margin-left: -8px;
+}
+#system:checked ~ .switch span:after {
+  background: #59595b;
+  height: 20px;
+  margin-top: -8px;
+  margin-left: 8px;
+}
+#system:checked ~ .switch span {
+  background: #000;
+  margin-left: -8px;
+}
+#system:checked ~ .switch span:after {
+  background: #000;
+  height: 20px;
+  margin-top: -8px;
+  margin-left: 8px;
+}
+#dark:checked ~ .switch label[for=dark] {
+  color: #fff;
+}
+#light:checked ~ .switch label[for=light] {
+  color: #fff;
+}
+#sysetm:checked ~ .switch label[for=system] {
+  color: #fff;
+}

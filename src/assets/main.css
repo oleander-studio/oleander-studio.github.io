@@ -1,0 +1,113 @@
+@import './base.css';
+@import './theme-switch.css';
+
+header {
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header figure {
+  background: var(--logo-url);
+  flex: 0 0 20vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 1em;
+  filter: blur(0.04em);
+  width: 100%;
+  background-position: center;
+}
+
+header figure path {
+  fill:#000000;
+  stroke-width:0.264583
+}
+
+h1 {
+  position: relative;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: calc(20px + 5vw);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 0 0.15em var(--logo-header-shadow);
+  user-select: none;
+  white-space: nowrap;
+  filter: blur(0.007em);
+  animation: shake 2.5s linear forwards;
+}
+
+@keyframes shake {
+  5%, 15%, 25%, 35%, 55%, 65%, 75%, 95% {
+      filter: blur(0.018em);
+      transform: translateY(0.018em) rotate(0deg);
+  }
+
+  10%, 30%, 40%, 50%, 70%, 80%, 90% {
+      filter: blur(0.01em);
+      transform: translateY(-0.018em) rotate(0deg);
+  }
+
+  20%, 60% {
+      filter: blur(0.03em);
+      transform: translate(-0.018em, 0.018em) rotate(0deg);
+  }
+
+  45%, 85% {
+      filter: blur(0.03em);
+      transform: translate(0.018em, -0.018em) rotate(0deg);
+  }
+
+  100% {
+      filter: blur(0.007em);
+      transform: translate(0) rotate(-0.5deg);
+  }
+}
+
+#app {
+  font-weight: normal;
+}
+
+main {
+  height: 100%;
+}
+
+.panel {
+  box-sizing: border-box;
+  height: 100%;
+  background: var(--color-background);
+  display: flex;
+  border-radius: 3px;
+  flex-direction: column;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    flex-direction: row;
+    padding-left: 2em;
+    align-items: normal;
+  }
+  header figure {
+    flex: 0 0 10%;
+    margin: 0;
+    width: auto;
+  }
+  #app {
+    height: calc(100vh - 60px);
+  }
+}
