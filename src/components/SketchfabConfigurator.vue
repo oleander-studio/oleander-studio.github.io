@@ -123,7 +123,6 @@ export default {
 .main-row {
   flex: 1 0 auto;
   display: flex;
-  height: 100%;
 }
 
 .sketchfab-vue-wrapper {
